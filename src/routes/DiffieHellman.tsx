@@ -139,6 +139,8 @@ const DiffieHellman = () => {
                             className="text-blue-600 mb-2 text-sm text-center"
                         >
                             {/* using math expresions */}
+                            A = g<sup className="text-red-500">a</sup> mod p
+                            <br />
                             A = {information.public_information_g}<sup className="text-red-500">{information.random_number_a}</sup> mod {information.public_information_p} = {result.publicKeyA}
                         </p>
                         <p className="text-gray-700 mb-2 text-sm text-center">
@@ -148,7 +150,9 @@ const DiffieHellman = () => {
                         <p
                             className="text-blue-600 mb-10 text-sm text-center"
                         >
-                            <span className="text-red-500">s</span> = {information.public_information_g}<sup className="text-red-500">{information.random_number_b}</sup> mod {information.public_information_p} = <span className="text-red-500">{result.sharedSecretKeyA}</span>
+                            <span className="text-red-500">s</span> = <strong className="text-blue-500">B</strong><sup className="text-red-500">a</sup> mod p
+                            <br />
+                            <span className="text-red-500">s</span> = {result.publicKeyB}<sup className="text-red-500">{information.random_number_a}</sup> mod {information.public_information_p} = <span className="text-red-500">{result.sharedSecretKeyA}</span>
                         </p>
                     </div>
                     <div className="flex flex-col justify-between min-h-full p-4 border-x-2 border-gray-300">
@@ -180,6 +184,8 @@ const DiffieHellman = () => {
                         <p
                             className="text-blue-600 mb-2 text-sm text-center"
                         >
+                            B = g<sup className="text-red-500">b</sup> mod p
+                            <br />
                             B = {information.public_information_g}<sup className="text-red-500">{information.random_number_b}</sup> mod {information.public_information_p} = {result.publicKeyB}
                         </p>
                         <p className="text-gray-700 mb-2 text-sm text-center">
@@ -189,7 +195,9 @@ const DiffieHellman = () => {
                         <p
                             className="text-blue-600 mb-10 text-sm text-center"
                         >
-                            <span className="text-red-500">s</span> = {information.public_information_g}<sup className="text-red-500">{information.random_number_a}</sup> mod {information.public_information_p} = <span className="text-red-500">{result.sharedSecretKeyB}</span>
+                            <span className="text-red-500">s</span> = <strong className="text-blue-500">A</strong><sup className="text-red-500">b</sup> mod p
+                            <br />
+                            <span className="text-red-500">s</span> = {result.publicKeyA}<sup className="text-red-500">{information.random_number_b}</sup> mod {information.public_information_p} = <span className="text-red-500">{result.sharedSecretKeyB}</span>
                         </p>
 
                     </div>
